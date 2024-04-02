@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -81,3 +80,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php	
+	$con=mysqli_connect("localhost","root","","drashti");
+	if(isset($_POST['email']))
+	{
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$sql="INSERT INTO `user_login`( `email`, `password`) VALUES ('[$email]','[$password]')";
+		$res=mysqli_query($con,$sql);
+	}
+?>
