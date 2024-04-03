@@ -11,8 +11,14 @@ else{
 	echo "connection was succesfull<br>";
 }
 
-$sql="SELECT * FROM `user_login`";
+$sql="SELECT * FROM `user_login` ";
 $result=mysqli_query($conn,$sql);
-$num=mysql_num_rows($result);
-echo mysql_num_rows($result);
+$num=mysqli_num_rows($result);
+echo $num;
+if($num>0){
+	while($row=mysqli_fetch_assoc($result)){
+		echo var_dump($row);
+		echo "<br>";
+	}
+}
 ?>
