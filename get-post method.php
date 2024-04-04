@@ -86,7 +86,7 @@
 	{
 		$email=$_POST['email'];
 		$password=$_POST['password'];
-		$sql="INSERT INTO `user_login`( `email`, `password`) VALUES ('[$email]','[$password]')";
+		$sql="INSERT INTO `user_login`( `email`, `password`) VALUES ('$email','$password')";
 		$res=mysqli_query($con,$sql);
 	}
 ?>
