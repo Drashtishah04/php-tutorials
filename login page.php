@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <div class="container mt-3">
-	<form action="user-login.php" method="POST">
+	<form action="login page.php" method="POST">
 		<input type="text" name="txtunm" placeholder="Enter username" class="form-control mt-3" required>
 		<input type="password" name="txtpwd" placeholder="Enter password" class="form-control mt-1"required>
 		<input type="submit" value="Log-In" class="btn btn-primary w-100">
@@ -9,21 +9,12 @@
 	</form>
 </div>
 <?php 
-	$con=mysqli_connect("localhost","root","","email");
+	$con=mysqli_connect("localhost","root","","email1");
 	if(isset($_POST['txtunm']))
 	{
 			$fnm=$_POST['txtunm'];
-			$lnm=$_POST['txtpw'];
-			$sql="INSERT INTO `student`( `user name`, `password`) VALUES ('$unm','$pwd')";
+			$pwd=$_POST['txtpwd'];
+			$sql="INSERT INTO `student`( `user name`, `password`) VALUES ('$fnm','$pwd')";
 			$res=mysqli_query($con,$sql);
-			$count=mysqli_num_rows($res);
-			if($count == 1)
-			{
-				header ("location:register page.php");
-			}
-			else
-			{
-				echo"invalid";
-			}
 	}
 ?>
