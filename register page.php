@@ -10,7 +10,7 @@
 	</form>
 </div>
 <?php
-	$con=mysqli_connect("localhost","root","","mail");
+	$con=mysqli_connect("localhost","root","","mail1");
 	if(isset($_POST['txtfnm']))
 	{
 		$fnm=$_POST['txtfnm'];
